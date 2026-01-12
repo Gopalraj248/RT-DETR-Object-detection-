@@ -39,7 +39,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 🚀 How to Run
-streamlit run app_ui.py
+streamlit run main.py
 
 
 
