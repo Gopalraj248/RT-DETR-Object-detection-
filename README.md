@@ -1,3 +1,4 @@
+<img width="993" height="409" alt="Screenshot 2026-01-12 143812" src="https://github.com/user-attachments/assets/f4e73eea-3aa4-4bb7-bb97-cf571f188b60" />
 # 🚀 RT-DETR Real-Time Object Detection App
 
 This project demonstrates the power of **RT-DETR (Real-Time Detection Transformer)**, a state-of-the-art object detection model by Ultralytics. The application is wrapped in a user-friendly web interface using **Streamlit**, allowing users to upload images and detect objects instantly.
