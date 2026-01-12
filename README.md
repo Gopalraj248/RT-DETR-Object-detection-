@@ -24,8 +24,6 @@ Follow these steps to run the project locally:
 git clone [https://github.com/Gopalraj248/RT-DETR-Object-detection-.git](https://github.com/Gopalraj248/RT-DETR-Object-detection-.git)
 cd RT-DETR-Object-detection-
 
-
-
 2. Create a Virtual Environment (Recommended)
 # For Windows
 python -m venv venv
@@ -36,10 +34,12 @@ python3 -m venv venv
 source venv/bin/activate
 
 
-3. Install Dependencies
+3. Install Dependencie
 pip install -r requirements.txt
-
-
 
 🚀 How to Run
 streamlit run app_ui.py
+
+
+
+![alt text](image-1.png)
