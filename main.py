@@ -8,9 +8,9 @@ import cv2
 st.set_page_config(page_title="RT-DETR Object Detection", layout="wide")
 
 st.title("🚀 RT-DETR Real-Time Object Detection")
-st.write("Image upload karein aur dekhein RT-DETR kaise objects pehchanta hai.")
+st.write("Upload an image and see how RT-DETR detects objects.")
 
-# 1. Model Load Karein (Caching use kar rahe hain taaki baar baar load na ho)
+# 1. Load Model (Using caching to prevent reloading on every interaction)
 @st.cache_resource
 def load_model():
     return RTDETR("rtdetr-l.pt")
@@ -22,10 +22,10 @@ st.sidebar.header("Settings")
 conf_threshold = st.sidebar.slider("Confidence Threshold", 0.0, 1.0, 0.25)
 
 # 3. File Uploader
-uploaded_file = st.file_uploader("Image chuniye...", type=["jpg", "jpeg", "png"])
+uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None:
-    # Image ko open karein
+    # Open the image
     image = Image.open(uploaded_file)
     img_array = np.array(image)
 
@@ -42,10 +42,10 @@ if uploaded_file is not None:
         results = model(img_array, conf=conf_threshold)
         
         # Plotting the results on image
-        # plot() function boxes aur labels draw kar deta hai
+        # The plot() function draws boxes and labels on the image
         res_plotted = results[0].plot()
         
-        # RGB format mein convert karke dikhayein
+        # Display the image (Converted to correct color channels)
         st.image(res_plotted, channels="BGR", use_container_width=True)
 
     # 4. Detailed Results Table
@@ -62,4 +62,4 @@ if uploaded_file is not None:
     if detections:
         st.table(detections)
     else:
-        st.write("Koi object nahi mila. Confidence threshold kam karke dekhein.")
+        st.write("No objects found. Try lowering the confidence threshold.")
